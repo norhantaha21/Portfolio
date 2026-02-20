@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Full Stack .NET Developer | Sunset Rose & Warm Amber Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "sunset-rose": "#E23E57",
+                "warm-amber": "#FFB347",
+                "rose-gold": "#B76E79",
+                "midnight": "#0a0608",
+                "surface-dark": "#160d10"
+            },
+              fontFamily: {
+        "display": ["Poppins", "sans-serif"],  
+        "playful": ["Inter", "sans-serif"],   
+    },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        },
+    },
+}
+</script>
+<style type="text/tailwindcss">
+:root {
+    --sunset-rose: #E23E57;
+    --warm-amber: #FFB347;
+    --rose-gold: #B76E79;
+}
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    scrollbar-width: thin;
+    scrollbar-color: var(--sunset-rose) #0a0608;
+}
+.glass-card {
+    background: rgba(22, 13, 16, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(226, 62, 87, 0.1);
+}
+.glossy-gradient-border {
+    position: relative;
+    background: linear-gradient(#160d10, #160d10) padding-box,
+                linear-gradient(45deg, var(--sunset-rose), var(--warm-amber)) border-box;
+    border: 1px solid transparent;
+}
+.text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#E23E57] to-[#FFB347];
+}
+.rose-glow {
+    box-shadow: 0 0 30px rgba(226, 62, 87, 0.3);
+}
+.skill-icon {
+    @apply flex flex-col items-center justify-center p-6 rounded-2xl transition-all duration-300 border border-white/5 bg-white/5 hover:bg-white/10 hover:border-sunset-rose/50;
+}
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+</style>
+</head>
+<body class="pt-20 bg-midnight text-slate-100 font-display selection:bg-sunset-rose selection:text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-midnight/70 backdrop-blur-xl border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-8 h-24 flex items-center justify-between">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <div class="display-font font-black text-3xl md:text-4xl text-gradient logo-glow">
+  .NET
+</div>
+    </div>
+
+    <!-- Links -->
+    <div class="hidden md:flex items-center gap-10 text-xs font-bold uppercase tracking-[0.25em] text-white/80">
+      <a class="hover:text-warm-amber transition-all duration-300" href="#about">About</a>
+      <a class="hover:text-warm-amber transition-all duration-300" href="#education">Education</a>
+      <a class="hover:text-warm-amber transition-all duration-300" href="#skills">Skills</a>
+      <a class="hover:text-warm-amber transition-all duration-300" href="#experience">Experience</a>
+      <a class="hover:text-warm-amber transition-all duration-300" href="#projects">Work</a>
+      <a href="#contact"
+   class="px-7 py-3 bg-gradient-to-r from-sunset-rose to-warm-amber text-white rounded-full hover:shadow-[0_0_30px_rgba(226,62,87,0.45)] transition-all duration-300 font-extrabold tracking-wider">
+   Contact
+</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <button class="md:hidden text-sunset-rose text-3xl">
+      <span class="material-icons">menu</span>
+    </button>
+
+  </div>
+</nav>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface-dark" id="home">
+
+  <!-- Background large text -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03]">
+    <h1 class="text-[25rem] font-extrabold tracking-tighter leading-none select-none text-sunset-rose animate-pulse">ROSE</h1>
+  </div>
+
+  <!-- Blurred colored circles -->
+  <div class="absolute top-1/4 left-1/4 w-[28rem] h-[28rem] bg-sunset-rose/10 rounded-full blur-[160px] animate-blob pointer-events-none"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-[28rem] h-[28rem] bg-warm-amber/10 rounded-full blur-[160px] animate-blob animation-delay-2000 pointer-events-none"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center max-w-4xl px-6">
+
+    <!-- Portrait with terminal icon -->
+    <div class="relative inline-block mb-10">
+      <div class="absolute inset-0 bg-sunset-rose/20 rounded-full blur-3xl scale-150 animate-pulse"></div>
+      <img alt="Developer Portrait" class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-rose-gold/20 p-1.5 shadow-xl" src="images/photo.jpg"/>
+      <div class="absolute -bottom-4 -right-4 bg-warm-amber p-4 rounded-2xl shadow-2xl text-midnight animate-bounce">
+        <span class="material-symbols-outlined font-bold text-3xl">terminal</span>
+      </div>
+    </div>
+
+    <!-- Job Title -->
+    <h2 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[0.9] animate-fadeIn">
+      Full Stack <br/>
+      <span class="text-gradient">.NET Engineer</span>
+    </h2>
+
+    <!-- Description -->
+    <p class="text-slate-400 text-lg md:text-2xl max-w-2xl mx-auto mb-12 leading-relaxed animate-fadeIn delay-500">
+      Designing scalable backend systems, secure APIs, and high‑performance architectures with 
+      <span class="text-white font-bold">C#</span>, 
+      <span class="text-white font-bold">ASP.NET Core</span>, and 
+      <span class="text-white font-bold">SQL Server</span>. 
+      Crafting modern, responsive frontend experiences.
+    </p>
+
+    <!-- Scroll/CTA -->
+    <div class="flex flex-col items-center animate-bounce delay-1000">
+      <a class="group flex flex-col items-center gap-4 text-sm font-bold uppercase tracking-widest text-warm-amber hover:text-sunset-rose transition-colors" href="#about">
+        <span>Explore the Core</span>
+        <span class="material-icons animate-bounce">expand_more</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!--  Animations -->
+<style>
+@keyframes blob {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+.animate-blob { animation: blob 8s infinite; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 1s forwards; }
+.animate-fadeIn.delay-500 { animation-delay: 0.5s; }
+</style>
+<section class="py-32 px-6" id="about">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+<div>
+<span class="text-sunset-rose text-xs font-bold uppercase tracking-[0.4em] mb-4 block">01 / The Persona</span>
+<h3 class="text-4xl md:text-6xl font-bold mb-8">Driven by Clean Code.  <span class="text-warm-amber">Built for Production</span></h3>
+<div class="space-y-6 text-slate-400 text-lg leading-relaxed">
+<p>NET Back-End Developer specialized in scalable APIs, secure authentication, and database-driven systems.
+Experienced with HTML, CSS, and JavaScript for seamless front-end integration.</p>
+<p>My philosophy is built on <span class="text-white">Clean Architecture</span> and <span class="text-white">Domain-Driven Design</span>. I believe that every millisecond of latency is a friction point to be eliminated.</p>
+<p>When I'm not optimizing LINQ queries or fine-tuning Azure pipelines, I'm contributing to open-source or exploring the frontiers of WebAssembly and Blazor.</p>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-gradient-to-r from-sunset-rose to-warm-amber opacity-20 blur-2xl rounded-[3rem]"></div>
+<div class="relative glass-card p-8 rounded-[3rem] border border-white/10">
+<div class="grid grid-cols-2 gap-6">
+<div class="p-6 bg-white/5 rounded-2xl">
+<h4 class="text-sunset-rose text-3xl font-bold mb-1">99.9%</h4>
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-500">Uptime Mentality</p>
+</div>
+<div class="p-6 bg-white/5 rounded-2xl">
+<h4 class="text-warm-amber text-3xl font-bold mb-1">50+</h4>
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-500">APIs Deployed</p>
+</div>
+<div class="p-6 bg-white/5 rounded-2xl">
+<h4 class="text-sunset-rose text-3xl font-bold mb-1">Modern</h4>
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-500">.NET 8 Focused</p>
+</div>
+<div class="p-6 bg-white/5 rounded-2xl">
+<h4 class="text-warm-amber text-3xl font-bold mb-1">Async</h4>
+<p class="text-[10px] uppercase tracking-widest font-bold text-slate-500">Parallel Master</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 bg-surface-dark/40" id="education">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20">
+<span class="text-warm-amber text-xs font-bold uppercase tracking-[0.4em] mb-4 block">02 / Academic Foundation</span>
+<h3 class="text-4xl md:text-6xl font-bold">Education</h3>
+</div>
+<div class="space-y-12">
+<div class="relative pl-12 border-l-2 border-sunset-rose/30 group">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-sunset-rose group-hover:scale-150 transition-transform shadow-[0_0_10px_var(--sunset-rose)]"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h4 class="text-2xl font-bold">B.Sc. in Computer Science (In Progress)</h4>
+<p class="text-warm-amber font-medium">Faculty of Science, Alexandria University
+Expected 2026
+</p>
+</div>
+<span class="text-slate-500 font-bold tracking-widest text-sm">2023 - 2026</span>
+</div>
+<p class="text-slate-400 mt-4 max-w-3xl">Developed strong expertise in designing database-driven applications, understanding software architecture patterns, and implementing scalable backend logic aligned with industry best practices.</p>
+</div>
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-sunset-rose group-hover:scale-150 transition-transform"></div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6" id="skills">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-20">
+<span class="text-sunset-rose text-xs font-bold uppercase tracking-[0.4em] mb-4 block">03 / Technical Core</span>
+<h3 class="text-4xl md:text-6xl font-bold">The Tech Stack</h3>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+<div class="skill-icon group">
+<span class="material-symbols-outlined text-5xl mb-4 text-sunset-rose group-hover:drop-shadow-[0_0_12px_var(--sunset-rose)]">code</span>
+<span class="text-sm font-bold uppercase tracking-widest">C#</span>
+</div>
+<div class="skill-icon group">
+<span class="material-symbols-outlined text-5xl mb-4 text-warm-amber group-hover:drop-shadow-[0_0_12px_var(--warm-amber)]">dns</span>
+<span class="text-sm font-bold uppercase tracking-widest">ASP.NET Core</span>
+</div>
+<div class="skill-icon group">
+<span class="material-symbols-outlined text-5xl mb-4 text-sunset-rose group-hover:drop-shadow-[0_0_12px_var(--sunset-rose)]">schema</span>
+<span class="text-sm font-bold uppercase tracking-widest">EF Core</span>
+</div>
+<div class="skill-icon group">
+<span class="material-symbols-outlined text-5xl mb-4 text-warm-amber group-hover:drop-shadow-[0_0_12px_var(--warm-amber)]">database</span>
+<span class="text-sm font-bold uppercase tracking-widest">SQL Server</span>
+</div>
+<div class="skill-icon group">
+<span class="material-symbols-outlined text-5xl mb-4 text-sunset-rose group-hover:drop-shadow-[0_0_12px_var(--sunset-rose)]">javascript</span>
+<span class="text-sm font-bold uppercase tracking-widest">FrontEnd Native</span>
+</div>
+<div class="skill-icon group">
+<span class="material-symbols-outlined text-5xl mb-4 text-warm-amber group-hover:drop-shadow-[0_0_12px_var(--warm-amber)]">cloud</span>
+<span class="text-sm font-bold uppercase tracking-widest">Azure</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 bg-surface-dark/60" id="experience">
+<div class="max-w-7xl mx-auto">
+<div class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-warm-amber text-xs font-bold uppercase tracking-[0.4em] mb-4 block">04 / Career Orbit</span>
+<h3 class="text-4xl md:text-6xl font-bold">Work Experience</h3>
+</div>
+<a class="text-sunset-rose font-bold uppercase tracking-[0.2em] text-xs flex items-center gap-2 hover:gap-4 transition-all"
+   href="https://drive.google.com/uc?export=download&id=1jnjxxgd0Nks7LKI-jnYav_CwTJSg8k53" download>
+    Download Resume <span class="material-icons text-sm">download</span>
+</a>
+</div>
+<div class="grid gap-12">
+<div class="glossy-gradient-border p-8 md:p-12 rounded-[2.5rem] flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<span class="text-sunset-rose font-black text-xl mb-2 block">Present</span>
+<span class="text-slate-500 font-bold uppercase tracking-widest text-xs">Nov 2025 — Now</span>
+</div>
+<div class="md:w-3/4">
+<h4 class="text-2xl font-bold mb-2">.NET Full Stack Developer Intern</h4>
+<p class="text-warm-amber font-bold mb-6">Digital Egypt Pioneers Initiative (DEPI) – MCIT</p>
+<ul class="space-y-4 text-slate-400">
+<li class="flex gap-4">
+<span class="text-sunset-rose material-icons text-sm mt-1">radio_button_checked</span>
+<span> Designed and developed secure RESTful APIs using ASP.NET Core and Entity Framework Core, following clean architecture and SOLID principles.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-sunset-rose material-icons text-sm mt-1">radio_button_checked</span>
+<span>Built and optimized SQL Server databases, implemented CRUD operations, and handled authentication using JWT and ASP.NET Identity.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-sunset-rose material-icons text-sm mt-1">radio_button_checked</span>
+<span> Developed responsive user interfaces using HTML, CSS, and JavaScript, and integrated them with backend APIs to ensure seamless data flow.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="p-8 md:p-12 border border-white/5 bg-white/5 rounded-[2.5rem] flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<span class="text-slate-300 font-black text-xl mb-2 block">2025</span>
+<span class="text-slate-500 font-bold uppercase tracking-widest text-xs">Aug 2025 — Sep 2025</span>
+</div>
+<div class="md:w-3/4">
+<h4 class="text-2xl font-bold mb-2">Full Stack .NET Trainee</h4>
+<p class="text-warm-amber font-bold mb-6">Information Technology Institute (ITI)</p>
+<ul class="space-y-4 text-slate-400">
+<li class="flex gap-4">
+<span class="text-warm-amber material-icons text-sm mt-1">radio_button_checked</span>
+<span>Developed ASP.NET Core MVC applications using layered architecture and clean code practices.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-warm-amber material-icons text-sm mt-1">radio_button_checked</span>
+<span>Built and consumed RESTful APIs using Entity Framework Core and SQL Server.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-warm-amber material-icons text-sm mt-1">radio_button_checked</span>
+<span>Implemented Repository and Unit of Work patterns to ensure maintainable and scalable backend systems.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="p-8 md:p-12 border border-white/5 bg-white/5 rounded-[2.5rem] flex flex-col md:flex-row gap-8">
+<div class="md:w-1/4">
+<span class="text-slate-300 font-black text-xl mb-2 block">2025</span>
+<span class="text-slate-500 font-bold uppercase tracking-widest text-xs">Aug 2025</span>
+</div>
+<div class="md:w-3/4">
+<h4 class="text-2xl font-bold mb-2">Backend Development Trainee</h4>
+<p class="text-warm-amber font-bold mb-6">Idea And Concepts</p>
+<ul class="space-y-4 text-slate-400">
+<li class="flex gap-4">
+<span class="text-warm-amber material-icons text-sm mt-1">radio_button_checked</span>
+<span> Developed server-side logic and RESTful APIs following structured backend architecture principles.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-warm-amber material-icons text-sm mt-1">radio_button_checked</span>
+<span> Designed and managed NoSQL databases using MongoDB for efficient data storage and retrieval.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-warm-amber material-icons text-sm mt-1">radio_button_checked</span>
+<span> Implemented data validation, error handling, and business rules to ensure reliable backend performance.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 max-w-7xl mx-auto" id="services">
+  <div class="mb-20 text-center">
+    <span class="text-sunset-rose text-xs font-bold uppercase tracking-[0.4em] mb-4 block">05 / Capabilities</span>
+    <h3 class="text-4xl md:text-6xl font-bold">Service Intensity</h3>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <!-- MVC Projects -->
+    <div class="glossy-gradient-border p-10 rounded-3xl group transition-all duration-500 hover:-translate-y-4">
+      <div class="w-16 h-16 bg-gradient-to-br from-sunset-rose to-warm-amber text-white flex items-center justify-center rounded-2xl mb-8 group-hover:rotate-6 transition-transform rose-glow">
+        <span class="material-icons text-3xl">code</span>
+      </div>
+      <h4 class="text-2xl font-bold mb-5">MVC Projects</h4>
+      <p class="text-slate-400 mb-8 leading-relaxed">Full-stack MVC apps with ready-made frontend (HTML/CSS/JS) integrated.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">ASP.NET MVC</span>
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">HTML/CSS/JS</span>
+      </div>
+    </div>
+
+    <!-- Web API -->
+    <div class="glossy-gradient-border p-10 rounded-3xl group transition-all duration-500 hover:-translate-y-4">
+      <div class="w-16 h-16 bg-gradient-to-br from-sunset-rose to-warm-amber text-white flex items-center justify-center rounded-2xl mb-8 group-hover:rotate-6 transition-transform rose-glow">
+        <span class="material-icons text-3xl">api</span>
+      </div>
+      <h4 class="text-2xl font-bold mb-5">Web API</h4>
+      <p class="text-slate-400 mb-8 leading-relaxed">High-performance RESTful APIs for scalable apps.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">REST / gRPC</span>
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">Microservices</span>
+      </div>
+    </div>
+
+    <!-- Database & ERD -->
+    <div class="glossy-gradient-border p-10 rounded-3xl group transition-all duration-500 hover:-translate-y-4">
+      <div class="w-16 h-16 bg-gradient-to-br from-sunset-rose to-warm-amber text-white flex items-center justify-center rounded-2xl mb-8 group-hover:rotate-6 transition-transform rose-glow">
+        <span class="material-icons text-3xl">storage</span>
+      </div>
+      <h4 class="text-2xl font-bold mb-5">Database & ERD</h4>
+      <p class="text-slate-400 mb-8 leading-relaxed">Design relational databases and ER diagrams for robust data management.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">SQL Server</span>
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">ERD Design</span>
+      </div>
+    </div>
+
+    <!-- UI/UX & Frontend -->
+    <div class="glossy-gradient-border p-10 rounded-3xl group transition-all duration-500 hover:-translate-y-4">
+      <div class="w-16 h-16 bg-gradient-to-br from-sunset-rose to-warm-amber text-white flex items-center justify-center rounded-2xl mb-8 group-hover:rotate-6 transition-transform rose-glow">
+        <span class="material-icons text-3xl">design_services</span>
+      </div>
+      <h4 class="text-2xl font-bold mb-5">UI/UX & Frontend</h4>
+      <p class="text-slate-400 mb-8 leading-relaxed">Frontend development with clean HTML, CSS, and JS for interactive UI.</p>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">HTML / CSS / JS</span>
+        <span class="px-3 py-1 bg-white/5 rounded-full text-[11px] font-bold text-warm-amber border border-warm-amber/20 uppercase tracking-wider">Responsive Design</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-32 px-6 bg-surface-dark/60" id="projects">
+
+  <div class="max-w-7xl mx-auto mb-16">
+    <span class="text-sunset-rose text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+      06 / Featured Projects
+    </span>
+    <h3 class="text-4xl md:text-6xl font-bold">
+      Backend Engineering Portfolio
+    </h3>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-16 max-w-7xl mx-auto">
+
+    <!-- ========================= -->
+    <!-- Project 1 -->
+    <!-- ========================= -->
+    <div class="group relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-sunset-rose/40 transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+      <!-- Gradient Background -->
+      <div class="absolute inset-0 rounded-3xl bg-gradient-to-br 
+                  from-sunset-rose/20 
+                  via-warm-amber/10 
+                  to-midnight/30 
+                  opacity-40 group-hover:opacity-70 transition duration-500">
+      </div>
+
+      <div class="relative z-10 space-y-6">
+
+        <!-- Title -->
+        <div>
+          <h4 class="text-2xl font-bold mb-2">
+            E-Commerce Web API
+          </h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            ASP.NET Core RESTful API built using Onion Architecture,
+            Repository & Unit of Work pattern, JWT Authentication,
+            and optimized SQL Server workflows for scalability.
+          </p>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-3">
+          <span class="px-3 py-1 bg-sunset-rose text-white text-xs rounded-full">ASP.NET Core</span>
+          <span class="px-3 py-1 bg-warm-amber text-midnight text-xs rounded-full">Onion Architecture</span>
+          <span class="px-3 py-1 bg-white/10 text-white text-xs rounded-full">EF Core</span>
+          <span class="px-3 py-1 bg-white/10 text-white text-xs rounded-full">SQL Server</span>
+          <span class="px-3 py-1 bg-white/10 text-white text-xs rounded-full">JWT</span>
+        </div>
+
+        <!-- Screenshots -->
+        <div class="bg-black/40 rounded-2xl p-5 border border-white/10">
+          <p class="text-xs uppercase text-slate-400 mb-4 tracking-widest">
+            System Preview
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <img src="images/swagger011.jpeg"
+                 class="rounded-xl w-full h-48 object-cover hover:scale-[1.03] transition duration-500 shadow-lg"
+                 alt="E-Commerce API Screenshot 1">
+
+            <img src="images/swagger022.jpeg"
+                 class="rounded-xl w-full h-48 object-cover hover:scale-[1.03] transition duration-500 shadow-lg"
+                 alt="E-Commerce API Screenshot 2">
+          </div>
+        </div>
+
+        <!-- GitHub -->
+        <a href="https://github.com/norhantaha21/ECommerce"
+           target="_blank"
+           class="inline-block text-warm-amber font-bold uppercase text-sm tracking-widest hover:underline">
+          View on GitHub →
+        </a>
+
+      </div>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- Project 2 -->
+    <!-- ========================= -->
+    <div class="group relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 hover:border-warm-amber/40 transition duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+      <!-- Gradient Background -->
+      <div class="absolute inset-0 rounded-3xl bg-gradient-to-br 
+                  from-warm-amber/20 
+                  via-sunset-rose/10 
+                  to-midnight/30 
+                  opacity-40 group-hover:opacity-70 transition duration-500">
+      </div>
+
+      <div class="relative z-10 space-y-6">
+
+        <!-- Title -->
+        <div>
+          <h4 class="text-2xl font-bold mb-2">
+            Gym Management System
+          </h4>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            ASP.NET MVC application built with 3-Layer Architecture,
+            Unit of Work pattern, ASP.NET Identity authentication,
+            and structured business logic separation.
+          </p>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="flex flex-wrap gap-3">
+          <span class="px-3 py-1 bg-sunset-rose text-white text-xs rounded-full">ASP.NET MVC</span>
+          <span class="px-3 py-1 bg-warm-amber text-midnight text-xs rounded-full">3-Layer</span>
+          <span class="px-3 py-1 bg-white/10 text-white text-xs rounded-full">EF Core</span>
+          <span class="px-3 py-1 bg-white/10 text-white text-xs rounded-full">Identity</span>
+          <span class="px-3 py-1 bg-white/10 text-white text-xs rounded-full">Unit of Work</span>
+        </div>
+
+        <!-- Screenshots -->
+        <div class="bg-black/40 rounded-2xl p-5 border border-white/10">
+          <p class="text-xs uppercase text-slate-400 mb-4 tracking-widest">
+            System Preview
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <img src="images/GymDashboard01.jpeg"
+                 class="rounded-xl w-full h-48 object-cover hover:scale-[1.03] transition duration-500 shadow-lg"
+                 alt="Gym Screenshot 1">
+
+            <img src="images/Gym02.jpeg"
+                 class="rounded-xl w-full h-48 object-cover hover:scale-[1.03] transition duration-500 shadow-lg"
+                 alt="Gym Screenshot 2">
+          </div>
+        </div>
+
+        <!-- GitHub -->
+        <a href="https://github.com/norhantaha21/GymManagementSystem"
+           target="_blank"
+           class="inline-block text-warm-amber font-bold uppercase text-sm tracking-widest hover:underline">
+          View on GitHub →
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="py-32 px-6" id="skills">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="mb-20">
+      <span class="text-warm-amber text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+        07 / Core Strengths
+      </span>
+      <h3 class="text-4xl md:text-6xl font-bold">
+        Technical Expertise
+      </h3>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+
+      <!-- Backend -->
+      <div class="p-8 border-b-4 border-sunset-rose bg-surface-dark rounded-2xl transition-transform hover:-translate-y-2">
+        <span class="material-symbols-outlined text-gradient text-4xl mb-4">code</span>
+        <h5 class="text-xl font-bold mb-2">Backend Development</h5>
+        <p class="text-slate-400 text-sm">
+          C#, ASP.NET Core (MVC & Web API), RESTful APIs, Clean Architecture,
+          Repository & Unit of Work patterns.
+        </p>
+      </div>
+
+      <!-- Database -->
+      <div class="p-8 border-b-4 border-warm-amber bg-surface-dark rounded-2xl transition-transform hover:-translate-y-2">
+        <span class="material-symbols-outlined text-gradient text-4xl mb-4">database</span>
+        <h5 class="text-xl font-bold mb-2">Database Engineering</h5>
+        <p class="text-slate-400 text-sm">
+          SQL Server, Joins, Stored Procedures, Query Optimization,
+          Entity Framework Core, LINQ.
+        </p>
+      </div>
+
+      <!-- Authentication -->
+      <div class="p-8 border-b-4 border-sunset-rose bg-surface-dark rounded-2xl transition-transform hover:-translate-y-2">
+        <span class="material-symbols-outlined text-gradient text-4xl mb-4">lock</span>
+        <h5 class="text-xl font-bold mb-2">Security & Auth</h5>
+        <p class="text-slate-400 text-sm">
+          JWT Authentication, ASP.NET Identity,
+          Role-based Authorization, Secure API design.
+        </p>
+      </div>
+
+      <!-- Architecture -->
+      <div class="p-8 border-b-4 border-warm-amber bg-surface-dark rounded-2xl transition-transform hover:-translate-y-2">
+        <span class="material-symbols-outlined text-gradient text-4xl mb-4">architecture</span>
+        <h5 class="text-xl font-bold mb-2">Software Architecture</h5>
+        <p class="text-slate-400 text-sm">
+          3-Layer Architecture, Onion Architecture,
+          SOLID Principles, OOP, Clean Code practices.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="py-32 px-6 bg-surface-dark/40" id="certifications">
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-20">
+      <span class="text-sunset-rose text-xs font-bold uppercase tracking-[0.4em] mb-4 block">
+        08 / Learning Journey
+      </span>
+      <h3 class="text-4xl md:text-6xl font-bold">
+        Training & Certifications
+      </h3>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-10">
+
+      <!-- ITI -->
+      <div class="glass-card p-10 rounded-3xl">
+        <h5 class="font-bold text-xl mb-4">.NET Full Stack Certificate</h5>
+        <p class="text-warm-amber text-xs uppercase tracking-wider mb-4">
+          Information Technology Institute (ITI)
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          120-hour intensive training covering ASP.NET Core,
+          MVC, Web APIs, Entity Framework, SQL Server,
+          and full-stack integration concepts.
+        </p>
+      </div>
+
+      <!-- DEPI -->
+      <div class="glass-card p-10 rounded-3xl">
+        <h5 class="font-bold text-xl mb-4">Digital Egypt Pioneers Initiative</h5>
+        <p class="text-warm-amber text-xs uppercase tracking-wider mb-4">
+          MCIT – DEPI Program
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Practical project-based training in C#, ASP.NET Core,
+          database-driven applications, and professional development skills.
+        </p>
+      </div>
+
+      <!-- Route Academy -->
+      <div class="glass-card p-10 rounded-3xl">
+        <h5 class="font-bold text-xl mb-4">Backend .NET Diploma</h5>
+        <p class="text-warm-amber text-xs uppercase tracking-wider mb-4">
+          Route Academy
+        </p>
+        <p class="text-slate-400 leading-relaxed">
+          Advanced backend concepts including SignalR,
+          Design Patterns, Authentication,
+          and scalable API development.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<section id="contact" class="px-6 py-32 bg-[#0b0f1a]">
+  <div class="max-w-6xl mx-auto">
+
+    <div id="contact-card"
+      class="relative overflow-hidden rounded-[2.5rem] 
+      bg-gradient-to-r from-[#ff5f8d] via-[#ff8a5c] to-[#ffb457]
+      p-16 flex flex-col md:flex-row items-center justify-between gap-10
+      shadow-2xl">
+
+      <!-- Big .NET background -->
+      <div
+        class="absolute right-[-120px] top-[-120px] 
+        text-white/10 text-[18rem] font-extrabold select-none">
+        .NET
+      </div>
+
+      <!-- Left -->
+<div class="relative z-10 max-w-xl">
+
+  <h3 class="text-5xl md:text-6xl leading-[1.1] tracking-tight text-white drop-shadow-lg">
+    
+    <span class="block font-['Poppins'] font-black text-6xl md:text-7xl">
+      Your idea just texted me...
+    </span>
+
+    <span class="mt-2 font-['Poppins'] font-extrabold text-black text-5xl md:text-6xl inline">
+      it wants to be built in
+    </span>
+
+    <span class="relative inline-block mt-4 mb-6 font-['Poppins'] font-black text-white text-6xl md:text-7xl">
+      <span class="relative z-10">.NET</span>
+      <span
+        class="absolute left-0 -bottom-3 w-full h-[8px]
+        bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600
+        rounded-full">
+      </span>
+    </span>
+
+  </h3>
+
+  <p class="text-lg opacity-90 mt-3 font-['Poppins']">
+    High-quality code. Zero wasted effort.
+  </p>
+
+</div>
+
+      <!-- Right Buttons -->
+      <div class="relative z-10 flex flex-col gap-4 w-full md:w-auto">
+
+        <a href="https://wa.me/201276545805" target="_blank"
+          class="bg-black text-white px-10 py-4 rounded-full 
+          text-lg font-bold flex items-center justify-center gap-3 
+          shadow-xl hover:scale-105 transition">
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp Me
+        </a>
+
+        <a href="mailto:norhantaha43@gmail.com"
+          class="bg-white/20 backdrop-blur text-white px-10 py-4 
+          rounded-full text-lg font-bold text-center 
+          hover:bg-white/30 transition">
+          <i class="fas fa-envelope"></i>
+          Email My Desk
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer class="py-16 border-t border-white/10 bg-midnight text-slate-400 text-[12px] font-bold tracking-[0.2em]">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+
+  
+    <div class="mb-8 md:mb-0 flex items-center space-x-2 uppercase">
+      <span>©️ 2026</span>
+      <span>Nourhan Taha – Full Stack .NET Engineer</span>
+    </div>
+
+  
+    <div class="flex flex-wrap space-x-6 uppercase">
+      
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/nourhan-taha-software" target="_blank" class="flex items-center space-x-2 hover:text-cyan-400 transition-colors">
+        <!-- SVG LinkedIn -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0V8zm7.5 0h4.78v2.16h.07c.66-1.25 2.28-2.57 4.7-2.57 5.03 0 5.95 3.31 5.95 7.62V24h-5v-7.91c0-1.89-.03-4.32-2.64-4.32-2.64 0-3.05 2.07-3.05 4.21V24h-5V8z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/norhantaha21" target="_blank" class="flex items-center space-x-2 hover:text-violet-400 transition-colors">
+        <!-- SVG GitHub -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.42 7.86 10.96.58.11.79-.25.79-.56 0-.28-.01-1.02-.01-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.75-1.56-2.56-.29-5.26-1.28-5.26-5.71 0-1.26.45-2.29 1.2-3.09-.12-.29-.52-1.47.11-3.07 0 0 .97-.31 3.18 1.18a11.1 11.1 0 012.9-.39c.99 0 1.98.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.6.23 2.78.11 3.07.75.8 1.2 1.83 1.2 3.09 0 4.44-2.7 5.42-5.28 5.7.42.36.8 1.08.8 2.17 0 1.57-.01 2.83-.01 3.21 0 .31.21.68.8.56A11.52 11.52 0 0023.5 12C23.5 5.65 18.35.5 12 .5z"/>
+        </svg>
+        <span>GitHub</span>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/201276545805" target="_blank" class="flex items-center space-x-2 hover:text-green-500 transition-colors">
+        <!-- SVG WhatsApp -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.031-.967-.273-.099-.472-.149-.672.15s-.771.967-.945 1.164c-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.173.198-.298.297-.497.099-.198.05-.372-.025-.52-.074-.149-.672-1.611-.921-2.205-.242-.579-.487-.501-.672-.51-.173-.008-.372-.01-.571-.01s-.52.074-.793.372c-.273.298-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.212 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.414.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.571-.347z"/>
+        </svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:norhantaha43@gmail.com" class="flex items-center space-x-2 hover:text-red-500 transition-colors">
+        <!-- SVG Email -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 13.065l-11-6.065v12h22v-12l-11 6.065zm0-11.065l11 6.065-11 6.065-11-6.065 11-6.065z"/>
+        </svg>
+        <span>Email</span>
+      </a>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script>
+  gsap.to("#contact-card", {
+    y: 12,
+    duration: 2.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
+</script>
+
+</body></html>
